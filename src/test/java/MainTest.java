@@ -21,7 +21,7 @@ public class MainTest {
         //THEN
         assertTrue(actual, "Der String sollte lang genug sein (mindestens 8 Zeichen).");
         System.out.println(teststring+" Testergebnis: "+actual);
-    };
+    }
     @Test
     @DisplayName("Test 2")
     public void isNotLongEnoughTest_whenValueabcd123_expectFalse() {
