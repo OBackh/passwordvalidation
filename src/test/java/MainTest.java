@@ -52,4 +52,19 @@ public class MainTest {
         assertTrue(actual, "Der String sollte auch mindestens eine Zahl beinhalten.");
         System.out.println("Enthält \""+teststring+"\" eine Zahl? Ergebnis: "+(actual? "Ja" : "Nein"));
     }
+    @Test
+    @DisplayName("Test containsNoDigits")
+    public void containsDigitsTest_whenValueHasNoDigits_expectFalse() {
+        System.out.println("Test if password has no digits:");
+
+        //GIVEN
+        String teststring = "abcdefgh";
+
+        //WHEN
+        boolean actual = Main.containsDigits(teststring);
+
+        //THEN
+        assertFalse(actual, "Der String sollte auch mindestens eine Zahl beinhalten.");
+        System.out.println("Enthält \""+teststring+"\" eine Zahl? Ergebnis: "+(actual? "Ja" : "Nein"));
+    }
 }
