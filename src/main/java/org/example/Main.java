@@ -9,6 +9,11 @@ public class Main {
        return password.length() >= 8;
     }
     public static boolean containsDigits(String password){
-        return true;
+        for (char c : password.toCharArray()) {
+            if (Character.isDigit(c)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
