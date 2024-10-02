@@ -45,5 +45,26 @@ public class Main {
         return false;
     }
 
+    public static boolean hasSpecialCharacters(String password) {
+        String allowedCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+        for (char c : password.toCharArray()) {
+            boolean isSpecialCharacter = true;
+
+            for (int i = 0; i < allowedCharacters.length(); i++) {
+                char allowedChar = allowedCharacters.charAt(i);
+                if (c == allowedChar) {
+                    isSpecialCharacter = false;
+                    break;
+                }
+            }
+
+            if (isSpecialCharacter) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
 }

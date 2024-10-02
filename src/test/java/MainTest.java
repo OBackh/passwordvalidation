@@ -99,17 +99,17 @@ public class MainTest {
     }
     @Test
     @DisplayName("Test hasSpecialCharacters")
-    public void isCommonPasswordTest_whenValueHasSpecialCharacters_expectTrue() {
-        System.out.println("Test if the password contains common Words:");
+    public void isCommonPasswordTest_whenValueHasSpecialCharacters_expectFalse() {
+        System.out.println("Test if the password contains special characters:");
 
         //GIVEN
-        String teststring = "Abcd1234%";
+        String teststring = "Abcd12345%";
 
         //WHEN
-        boolean actual = Main.isCommonPassword(teststring);
+        boolean actual = Main.hasSpecialCharacters(teststring);
 
         //THEN
-        assertTrue(actual, "Bitte keine einfachen Zeichenfolgen oder üblichen Wörter verwenden!");
+        assertFalse(actual, "Bitte keine Sonderzeichen verwenden!");
         System.out.println("Enthält \""+teststring+"\" Sonderzeichen? Ergebnis: "+(actual? "Ja" : "Nein"));
     }
 }
