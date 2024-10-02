@@ -31,12 +31,18 @@ public class Main {
                 }
             }
             return false;
-
     }
 
 
     public static boolean isCommonPassword(String password){
-        return true;
+        String[] wordContainer = {"Password1","Aa345678","12345678", "Password", "PASSWORD", "abcdefgh", "00000000"};
+
+        for(String i : wordContainer){
+            if(password == i){
+                return true;
+            }
+        }
+        return false;
     }
 
 

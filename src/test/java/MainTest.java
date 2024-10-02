@@ -84,18 +84,32 @@ public class MainTest {
     }
     @Test
     @DisplayName("Test isCommonPassword")
-    public void isCommonPasswordTest_whenValueHasCommonWords_expectTrue() {
+    public void isCommonPasswordTest_whenValueHasCommonWords_expectFalse() {
         System.out.println("Test if the password contains common Words:");
 
         //GIVEN
-        String teststring = "123456";
+        String teststring = "Aa345678";
+
+        //WHEN
+        boolean actual = Main.isCommonPassword(teststring);
+
+        //THEN
+        assertFalse(actual, "Bitte keine einfachen Zeichenfolgen oder üblichen Wörter verwenden!");
+        System.out.println("Enthält \""+teststring+"\" übliche Zeichenfolgen oder Wörter? Ergebnis: "+(actual? "Ja" : "Nein"));
+    }
+    @Test
+    @DisplayName("Test hasSpecialCharacters")
+    public void isCommonPasswordTest_whenValueHasSpecialCharacters_expectTrue() {
+        System.out.println("Test if the password contains common Words:");
+
+        //GIVEN
+        String teststring = "Abcd1234%";
 
         //WHEN
         boolean actual = Main.isCommonPassword(teststring);
 
         //THEN
         assertTrue(actual, "Bitte keine einfachen Zeichenfolgen oder üblichen Wörter verwenden!");
-        System.out.println("Enthält \""+teststring+"\" übliche Zeichenfolgen oder Wörter? Ergebnis: "+(actual? "Ja" : "Nein"));
+        System.out.println("Enthält \""+teststring+"\" Sonderzeichen? Ergebnis: "+(actual? "Ja" : "Nein"));
     }
-
 }
