@@ -67,4 +67,21 @@ public class MainTest {
         assertFalse(actual, "Der String sollte auch mindestens eine Zahl beinhalten.");
         System.out.println("Enthält \""+teststring+"\" eine Zahl? Ergebnis: "+(actual? "Ja" : "Nein"));
     }
+    @Test
+    @DisplayName("Test hasMixedCase")
+    public void hasMixedCaseTest_whenValueHasMixedCase_expectTrue() {
+        System.out.println("Test if the password contains mixed cases:");
+
+        //GIVEN
+        String teststring = "aBcDeFgH";
+
+        //WHEN
+        boolean actual = Main.hasMixedCase(teststring);
+
+        //THEN
+        assertTrue(actual, "Mindestens einen Groß- und einen Kleinbuchstaben verwenden!");
+        System.out.println("Enthält \""+teststring+"\" Groß- UND Kleinbuchstaben Ergebnis: "+(actual? "Ja" : "Nein"));
+    }
+
+
 }

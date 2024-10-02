@@ -16,4 +16,28 @@ public class Main {
         }
         return false;
     }
+    public static boolean hasMixedCase(String password){
+        boolean hasUpperCase = false;
+        boolean hasLowerCase = false;
+
+        for (char c : password.toCharArray()) {
+                if (Character.isUpperCase(c)) {
+                    hasUpperCase = true;
+                } else if (Character.isLowerCase(c)){
+                    hasLowerCase = true;
+                }
+                if (hasUpperCase && hasLowerCase) {
+                    return true;
+                }
+            }
+            return false;
+
+    }
+
+
+    public static boolean isCommonPassword(String password){
+        return true;
+    }
+
+
 }
