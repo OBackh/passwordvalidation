@@ -80,8 +80,22 @@ public class MainTest {
 
         //THEN
         assertTrue(actual, "Mindestens einen Groß- und einen Kleinbuchstaben verwenden!");
-        System.out.println("Enthält \""+teststring+"\" Groß- UND Kleinbuchstaben Ergebnis: "+(actual? "Ja" : "Nein"));
+        System.out.println("Enthält \""+teststring+"\" Groß- UND Kleinbuchstaben? Ergebnis: "+(actual? "Ja" : "Nein"));
     }
+    @Test
+    @DisplayName("Test isCommonPassword")
+    public void isCommonPasswordTest_whenValueHasCommonWords_expectTrue() {
+        System.out.println("Test if the password contains common Words:");
 
+        //GIVEN
+        String teststring = "123456";
+
+        //WHEN
+        boolean actual = Main.isCommonPassword(teststring);
+
+        //THEN
+        assertTrue(actual, "Bitte keine einfachen Zeichenfolgen oder üblichen Wörter verwenden!");
+        System.out.println("Enthält \""+teststring+"\" übliche Zeichenfolgen oder Wörter? Ergebnis: "+(actual? "Ja" : "Nein"));
+    }
 
 }
